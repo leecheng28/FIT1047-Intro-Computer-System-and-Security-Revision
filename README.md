@@ -138,27 +138,37 @@ Phase modulation:
 the initial angle at which the sound wave begins.
 
 What data link layer does:
-
+- encode/decode between frames and signals.
+- control access to physical layer (Media Access Control MAC).
 - error detection.
-- 
+- interface with network layer.
+
 Contention-based MAC (play by rules)
 Any device can transmit at any time:
+first-come-first-serve basis.
 
 Collions - two devices tramsmitting at the same time:
+avoid collision by carrier sensing (listen on the network for transmission).
 
 Ethernet MAC:
-Media Access Control: CSMA/CD
+Media Access Control: CSMA/CD (wired Ethernet)
 1) Carrier Sense (CS):
+listen on bus, only transmit when no other signals are detected.
 
 2) Multiple Access (MA):
+multiple devices access the same medium.
 
 3) Collision Detection (CD):
+when a signal other than own is detected, send a jam signal (so all devices detect a collision), all signals wait a random time before re-transmitting.
 
-Shared Ethernet
+Media Access Control: CSMA/CA (WLAN - wireless local area network)
+Problems in WLAN if CSMA/CD MAC is used: hiden node problem. Wireless devices maybe far apart and may not be able to detect other devices. 
+Solution: CSMA/CA (1. ARQ; 2. Controlled Access).
+1. stop-and-wait ARQ (1 and 2 are somehow similar)
+- automatic repeat ReQuest.
+- receiver sends ACK (acknowledged) after receiving a frame. Sender does not send the next frame until an ACK is received.
+- if no ACK is received, everyone waits 0 to 1, 3, 7, ... time units before re-transmitting (exponential back-off).
 
-Problems with shared ethernet
-Half-duplex:
+2. controlled access
+- device can send RTS (request to send). device only send after receiving CTS (clear to send).
 
-Broadcasting:
-
-Limited network size:
