@@ -2,6 +2,7 @@
 
 
 
+## Week8
 Network components
 Client: 
 provide access to internet users.
@@ -43,6 +44,7 @@ Physical: bit
 
 
 
+## Week9
 Networks application layer architectures/workloads
 Presentation logic:
 User interface. How user controls application.
@@ -172,3 +174,41 @@ Solution: CSMA/CA (1. ARQ; 2. Controlled Access).
 2. controlled access
 - device can send RTS (request to send). device only send after receiving CTS (clear to send).
 
+
+
+## Week10
+One address per network layer (what is the address and what it does)
+Application layer: 
+URL. Identify and access network resources that are connected to World Wide Web.
+
+Transport layer (TCP):
+port number. Identify which application on a certain device to send packets to.
+
+Network layer (IP):
+IP address. Identify which device to send packets to.
+
+Data link layer:
+MAC address (48 bit - 6 bytes. e.g., MM:AA:QQ:WW:FF:EE). Identify which switch to send frames to.
+
+Each TCP packet contains two numbers.
+1) sequence number.
+how many bytes we have transmitted.
+
+2) acknowledgement number.
+how many bytes of acknowledgement we have received from receiver.
+
+* Motivation:
+we can therefore check how many bytes of data we have transmitted successfully.
+
+Establish TCP connection
+three-way handshake:
+-
+-
+-
+
+Close TCP connection
+four-way handshake:
+-
+-
+-
+-
