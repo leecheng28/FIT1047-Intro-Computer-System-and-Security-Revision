@@ -202,8 +202,8 @@ we can therefore check how many bytes of data we have transmitted successfully.
 
 Establish TCP connection
 three-way handshake:
--
--
+- client sends an SYN packet
+- 
 -
 
 Close TCP connection
@@ -212,3 +212,20 @@ four-way handshake:
 -
 -
 -
+
+## Week12
+Security properties
+authenticity: data is from the source where it claims to be from.
+integrity: data has not been changed since last authentic event.
+confidentiality: data is kept to some principals only.
+privacy: the protection of personal information (account, password).
+availability: the quality of the system being available when needs arise.
+non-repudiation: some action is related to some entity, and cannot be repudiated. e.g., signed contract.
+
+Security attacks
+worm: a standalone malware program that replicates itself, and trys to spread to other computers through networks, file transfers.
+virus: a standalone malware program that replicates itself, and insert codes into computer system in order to exploit system weakness. Get distributed with program/document. Runs and spread when host program executes.
+trojan horse: a program that hides itself from its true intents, create backdoors to give attacker access, activate other malwares.
+phishing: create a fake login in page and steal internet users' credentials.
+ransomware: install malicious programs that encrypt data, and ask for money.
+botnets: remote control, run denial of service attacks that prevents system from working. e.g., from inside of a computer using virus, trojan horse. Or from outside of a computer using massive requests/traffics.
