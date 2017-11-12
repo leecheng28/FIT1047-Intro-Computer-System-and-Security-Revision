@@ -480,5 +480,3 @@ phishing: create a fake login in page and steal internet users' credentials.
 ransomware: install malicious programs that encrypt data, and ask for money (professionally). 
 
 botnets: remote control, run denial of service attacks that prevents system from working. e.g., from inside of a computer using virus, trojan horse. Or from outside of a computer using massive requests/traffics.
-
-
