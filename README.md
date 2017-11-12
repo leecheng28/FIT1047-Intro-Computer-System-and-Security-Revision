@@ -133,7 +133,7 @@ Boot process
     - results of POST - be( ignore. eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee )ep on 2000's windows. Or 'Deng'/'Dung'/'Duung'/'Doong' in 2015's Apple computer.
 
 5) video card.
-    - after successful post, initialize video card and show rudimentary initialization (e.g., white Apple icon appears after 'Dung'/'Duung'/'Doong').
+    - after successful post, initialize video card and show rudimentary initialization (e.g., white Apple icon appears after 'Deng'/'Dung'/'Duung'/'Doong').
     
 6) other hardware.
     - hard-disk, DVD drive, networking interface card (NIC), sound card, RAM chips.
@@ -148,7 +148,22 @@ Boot process
 
 
 ## Week6
+CPU has different modes
+kernel mode:
+ - code is run without any restrictions.
+ - the OS runs in kernel mode.
+ - interrupts trigger switch to kernel mode.
+ 
+user mode:
+- only a limited subset of instructions can be used. e.g., no I/O, read file, write file...
+- normal applications run in user mode.
 
+What does an OS do (in this unit)?
+- process management;
+- memory management;
+- I/O.
+
+...
 
 
 
