@@ -2,6 +2,30 @@
 
 
 
+## Week7
+Symmetric encryption:
+sender and receiver share the same key to encrypt (lock a padlock) and decrypt (unlock a padlock) the transmitted messages.
+
+Disadvantages of symmetric encryption:
+- key distribution. A secure channel is necessary for the distribution of secret key (recursive problem: need to create a second channel that is secure).
+- scalbbility. Each pair of sender and receiver needs to have a unique pair of key (otherwise one gets hacked => all gets hacked), and the number of keys grow exponentially. e.g., 2 people have 1 handshake, 3 people have 3 handshakes, ..., 10 people have 45 handshakes.
+
+Public key cryptography (asymmetric):
+Sender can encrypt a message (lock a padlock) using the public key of the receiver, but only the receiver can decrypt (unlock the padlock) using the private key of his own. Private key is kept by the receiver and nobody knows what it is.
+
+Crytographic hash function:
+- a hash function maps input of arbitrary length to a fixed length output.
+- cryptographic hash functions are infeasible to invert.
+- hashes for similar messages should not be correlated at all.
+- infeasible to find collisions - two messges with the same hash value.
+- used to in digital signatures, for storing password, MAC (message authentic code).
+
+Message authentication code:
+- also known as a 'tag', is a short piece of information used to authenticate a message. That is, to authenticate the message comes from an authenticated sender (authenticity) and the message has not been changed (integrity).
+- consists of three algorithms. 1) A key generation algorithm selects a key from the key space randomly. 2) A signing algorithm efficiently returns the tag given the key and the message. 3) A verification algorithm that efficiently verifies the authenticity of the message given the key and tag. That is, return Accept when the message and tag are not forged and Reject otherwise.
+
+
+
 ## Week8
 Network components
 Client: 
@@ -273,14 +297,14 @@ integrity: data has not been changed since last authentic event.
 
 confidentiality: data is kept to some principals only.
 
-privacy: the protection of personal information (account, password).
+privacy: the protection of personal informations/space (account, password).
 
-availability: the quality of the system being available when needs arise.
+availability: some service or resource can be used within a particular time with a particular quality.
 
-non-repudiation: some action is related to some entity, and cannot be repudiated. e.g., signed contract.
+non-repudiation: some action is related to an entity, and there is evidence that it has actually happened. Thus, this entity cannot repudiate what is happened. e.g., a signed contract.
 
 Security attacks
-worm: a standalone malware program that replicates itself, and trys to spread to other computers through networks, file transfers.
+worm: a standalone malware program that replicates itself, and trys to spread to other computers or networks. e.g., file transfers.
 
 virus: a standalone malware program that replicates itself, and insert codes into computer system in order to exploit system weakness. Get distributed with program/document. Runs and spread when host program executes.
 
@@ -288,7 +312,7 @@ trojan horse: a program that hides itself from its true intents, create backdoor
 
 phishing: create a fake login in page and steal internet users' credentials.
 
-ransomware: install malicious programs that encrypt data, and ask for money.
+ransomware: install malicious programs that encrypt data, and ask for money (professionally). 
 
 botnets: remote control, run denial of service attacks that prevents system from working. e.g., from inside of a computer using virus, trojan horse. Or from outside of a computer using massive requests/traffics.
 
