@@ -2,6 +2,89 @@
 
 
 
+## Week3
+[MARIE](https://github.com/MARIE-js/MARIE.js) Registers
+AC (Accumulator): a "general purpose" register, stores the value currently operating on.
+MAR (Memory address register): stores the memory address.
+MBR (Memory buffer register): stores the data when being transferred.
+IR (Instruction register): current instruction being executed.
+PC (Program counter): where the program is in its current program sequence.
+
+Combinational circuit:
+Output is a function of inputs.
+
+Examples of combinational circuit
+adder: add two bits. Truth table components - bit1, bit2, result, carry.
+full adder: add three bits. Truth table components - bit1, bit2, carry in, result, carry out.
+ripple carry adder: connect three full adders. 
+decoder: activate one output based on two bits.
+Multiplexer: select one of several inputs.
+
+Arithmetic logic unit (ALU) 
+computations:
+- integer operations (addition, subtraction, multiplication, division).
+- comparisons.
+- bitwise boolean operations (and, or, not).
+- shifting.
+
+Inputs:
+- two n-bit operands.
+- op-code (which opeartions should we do?).
+
+Output:
+- n-bit result, status flag (error, overflow, success).
+
+How ALU decide which operation to use?
+- Do all operations in parallel.
+- Choose the one described by op-code, using multiplexer.
+
+Sequential Circuits:
+Output depends on a sequence of inputs.
+
+Examples of Sequential Circuits:
+- SR latch (set-reset-latch).
+- D flip-flop. 1) one input: the data to be stored. 2) one output: the data currently stored. 3) a clock: state only changes on "positive edge" (clock can be configured to positive edge or negative edge). * application: register design.
+
+Register transfer language (RTL)
+Fetch:
+4 steps.
+
+Decode:
+0, or 1, or 2 steps.
+
+Execute:
+0, or 1, ..., or * steps. Depends on implementation.
+
+
+
+## Week4
+When does CPU communicaite with I/O devices?
+Programmed I/O:
+a.k.a., polling I/O. Program checks registers periodically.
+
+Pseudocode Programmed I/O:
+while (true):
+    if (IORegister1.canRead()):
+        processRegister1();
+    else if (IORegister2.canRead()):
+        processRegister2();
+    else if (IORegister3.canRead()):
+        processRegister3();
+    ...
+    end if
+end while
+
+Interrupts (opposite of polling):
+- CPU is notified when I/O is available.
+- CPU interrupts what it is doing, process IO, then continue with normal opeartions.
+
+How CPU is notified of I/O?
+- Device notifies CPU of interrupt by setting a bit in a special register.
+- algorithm {cpu checks if the interrupt bit is set. If yes process interrupt, else fetch-decode-fetch}
+
+
+
+
 ## Week7
 Symmetric encryption:
 sender and receiver share the same key to encrypt (lock a padlock) and decrypt (unlock a padlock) the transmitted messages.
