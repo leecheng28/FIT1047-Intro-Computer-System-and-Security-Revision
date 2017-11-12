@@ -177,6 +177,20 @@ Solution: CSMA/CA (1. ARQ; 2. Controlled Access).
 
 
 ## Week10
+IP version 4 address
+- used to address network layer devices (Each network layer device has its assgined IP address).
+- Example: 130.194.66.43
+10000010 11000010 01000010 00101011
+networknetworknet subnet(LAN)Hostho
+
+Subnets
+gateway router: If a device sends a packet to another device that is not under same subnet, the 1st device must send packet to its gateway router and then send to the 2nd device's gateway router under the same subnet. Lastly the packet is sent from the 2nd gateway router to the 2nd device it connects to.
+
+Backbone networks: a backbone network interconnects various pieces of networks, providing a path for exchanging information between LANs and subnetworks.
+
+Address resolution @applicationLayer
+How to find MAC address for an IP address: devices keep a mapping between IPs to MACs. the router will ask the switch every client is connected to with MAC address as an input. Switch will return an IP address the input MAC address is mapped to as an output.
+
 One address per network layer (what is the address and what it does)
 Application layer: 
 URL. Identify and access network resources that are connected to World Wide Web.
@@ -201,17 +215,30 @@ how many bytes of acknowledgement we have received from receiver.
 we can therefore check how many bytes of data we have transmitted successfully.
 
 Establish TCP connection
+some terms:
+- @SYN indicate to start a TCP session.
+- @ACK indicate to ackonwledge the recipient of transmitted packets. 
+
 three-way handshake:
-- client sends an SYN packet
-- 
--
+- client sends a SYN packet, with a random sequence number A
+- server replies with SYN, ACK, acknowledgement number A+1, and a random sequence number B.
+- client sends ACK, acknowledgement number B+1.
 
 Close TCP connection
 four-way handshake:
--
--
--
--
+- computer A (client or server) sends a FIN packet
+- computer B acknowledges with an ACK
+- computer B sends a FIN packet
+- computer A acknowledges with an ACK 
+* can be simplified to a three-way handshake (combing B's ACK and FIN)
+
+Internet architecture
+- The internet is a network of networks.
+- Each network is an automous system operated by an organizaiton or ISP (internet service provider).
+- Within an automous system, routers exchange packets/information/data via "interior routing" (protocols: RIP, OSPF, EIGRP).
+- Outside an automous system, an automous system pair exchange information via a border router - "exterior routing" (protocols: BGP - border gateway protocol).
+
+## Week11
 
 ## Week12
 Security properties
