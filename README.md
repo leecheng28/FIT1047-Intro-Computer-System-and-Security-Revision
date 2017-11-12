@@ -4,10 +4,15 @@
 
 ## Week3
 [MARIE](https://github.com/MARIE-js/MARIE.js) Registers
+
 AC (Accumulator): a "general purpose" register, stores the value currently operating on.
+
 MAR (Memory address register): stores the memory address.
+
 MBR (Memory buffer register): stores the data when being transferred.
+
 IR (Instruction register): current instruction being executed.
+
 PC (Program counter): where the program is in its current program sequence.
 
 Combinational circuit:
@@ -15,9 +20,13 @@ Output is a function of inputs.
 
 Examples of combinational circuit
 adder: add two bits. Truth table components - bit1, bit2, result, carry.
+
 full adder: add three bits. Truth table components - bit1, bit2, carry in, result, carry out.
+
 ripple carry adder: connect three full adders. 
+
 decoder: activate one output based on two bits.
+
 Multiplexer: select one of several inputs.
 
 Arithmetic logic unit (ALU) 
@@ -63,24 +72,82 @@ Programmed I/O:
 a.k.a., polling I/O. Program checks registers periodically.
 
 Pseudocode Programmed I/O:
+```
 while (true):
-    if (IORegister1.canRead()):
-        processRegister1();
-    else if (IORegister2.canRead()):
-        processRegister2();
-    else if (IORegister3.canRead()):
-        processRegister3();
-    ...
-    end if
-end while
 
+    if (IORegister1.canRead()):
+    
+        processRegister1();
+    
+    else if (IORegister2.canRead()):
+    
+        processRegister2();
+    
+    else if (IORegister3.canRead()):
+        
+        processRegister3();
+    
+    ...
+    
+    end if  
+    
+end while
+```
 Interrupts (opposite of polling):
 - CPU is notified when I/O is available.
 - CPU interrupts what it is doing, process IO, then continue with normal opeartions.
 
 How CPU is notified of I/O?
 - Device notifies CPU of interrupt by setting a bit in a special register.
-- algorithm {cpu checks if the interrupt bit is set. If yes process interrupt, else fetch-decode-fetch}
+- algorithm 
+```
+    cpu checks if the interrupt bit is set;
+    If yes process interrupt;
+    else fetch-decode-fetch;
+```
+
+DMA (direct memory access)
+- CPU can dedicate memory transfer operaitons to dedicated controller.
+For example,
+    - hard disk controller can transfer data to memory.
+    - graphics card can fetch image from memory.
+    - cpu can do its own tasks.
+- CPU and DMA controller share the same data bus.
+    - only one can do memory transfer at the same time.
+    
+
+
+## Week5
+Boot process
+
+1) turn power on.
+
+2) processor starts.
+
+3) initial software.
+    - BIOS controls start-up steps, provide initial system configuration (power saving, security ...), and confitures accessible hardware.
+    - Booting (really!) starts with execution of start-up program.
+    
+4) POST.
+    - power-on-self-test.
+    - results of POST - be( ignore. eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee )ep on 2000's windows. Or 'Deng'/'Dung'/'Duung'/'Doong' in 2015's Apple computer.
+
+5) video card.
+    - after successful post, initialize video card and show rudimentary initialization (e.g., white Apple icon appears after 'Dung'/'Duung'/'Doong').
+    
+6) other hardware.
+    - hard-disk, DVD drive, networking interface card (NIC), sound card, RAM chips.
+
+7) find operating system.
+
+8) boot sector.
+    - boot loder (boot sector with code to be executed) loads the OS kernel, then it loads various device drivers.
+    - all drivers loaded, start GUI and load personal settings.
+    - computer ready to use!
+
+
+
+## Week6
 
 
 
