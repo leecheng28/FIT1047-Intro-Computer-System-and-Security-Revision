@@ -183,8 +183,9 @@ IP version 4 address
 10000010 11000010 01000010 00101011
 networknetworknet subnet(LAN)Hostho
 
-Subnets
-gateway router: If a device sends a packet to another device that is not under same subnet, the 1st device must send packet to its gateway router and then send to the 2nd device's gateway router under the same subnet. Lastly the packet is sent from the 2nd gateway router to the 2nd device it connects to.
+how a router works: A router connects two or more networks. If a device sends a packet to another device that is not under same subnet, the 1st device must send packet to its gateway router and then send to the 2nd device's gateway router under the same subnet. Lastly the packet is sent from the 2nd gateway router to the 2nd device it connects to.
+
+how a switch works: A switch connects devices in a LAN. When a packet arrives, switch looks at forwarding table to decide which port the device with the destination MAC address is connected to. If MAC-port pair does not exist, the packet will be sent to all ports and remember which port the packet goes to. If MAC-port does exist, then (great!) send the packet to its port directly.
 
 Backbone networks: a backbone network interconnects various pieces of networks, providing a path for exchanging information between LANs and subnetworks.
 
@@ -239,20 +240,57 @@ Internet architecture
 - Outside an automous system, an automous system pair exchange information via a border router - "exterior routing" (protocols: BGP - border gateway protocol).
 
 ## Week11
+Trusted certificates:
+- A trusted certificate is digitally signed by a known certification authority.
+- Browsers (e.g., Chrome, Safari, Firefox) have a list of known certification authorities.
+
+Problems with certificate:
+- Each browser has a long list of trusted certificates. But it is unclear whether those certificates are trustworthy.
+- Everyone can buy certificates for their website, but it does not make the certificate trustworthy.
+
+VPN: A VPN connects a client to VPN gateway via encrypted VPN tunnel.
+
+why VPN does not provide end-to-end security between a home PC and a PC in an enterprise network: because the encrypted tunnel ends at VPN gateway. It does not extend to the enterprise network.
+
+DMZ (demiltarized zone):
+- Create a zone that considered less secure than internal network, but still protected from direct access. It is a zone that lies between an internal network and the internet.
+
+Examples of firewall placements for DMZ:
+- A DMZ can be realized with one firewall (three-legged). One leg is the DMA, the 2nd leg is the internet, and the 3rd leg is the internal network.
+- A DMZ can be realized with two firewalls (and is more secure). One towards the internet and another one towards the internal network.
+
+IDS (intrusion detection system):
+It monitors network and system activities. Once a potentially malicious activity is found, alert the system.
+
+IPS (intrusion prevention system):
+It is an IDS with additional active functionality. It blocks or stops potentially malicious activities.
 
 ## Week12
 Security properties
 authenticity: data is from the source where it claims to be from.
+
 integrity: data has not been changed since last authentic event.
+
 confidentiality: data is kept to some principals only.
+
 privacy: the protection of personal information (account, password).
+
 availability: the quality of the system being available when needs arise.
+
 non-repudiation: some action is related to some entity, and cannot be repudiated. e.g., signed contract.
 
 Security attacks
 worm: a standalone malware program that replicates itself, and trys to spread to other computers through networks, file transfers.
+
 virus: a standalone malware program that replicates itself, and insert codes into computer system in order to exploit system weakness. Get distributed with program/document. Runs and spread when host program executes.
+
 trojan horse: a program that hides itself from its true intents, create backdoors to give attacker access, activate other malwares.
+
 phishing: create a fake login in page and steal internet users' credentials.
+
 ransomware: install malicious programs that encrypt data, and ask for money.
+
 botnets: remote control, run denial of service attacks that prevents system from working. e.g., from inside of a computer using virus, trojan horse. Or from outside of a computer using massive requests/traffics.
+
+## Sample exam
+
